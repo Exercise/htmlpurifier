@@ -119,9 +119,7 @@ class HTMLPurifier_DefinitionCache_Serializer extends
             } elseif (!$this->_testPermissions($base)) {
                 return false;
             }
-            $old = umask(0022); // disable group and world writes
             mkdir($directory);
-            umask($old);
         } elseif (!$this->_testPermissions($directory)) {
             return false;
         }
